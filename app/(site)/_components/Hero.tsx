@@ -1,6 +1,6 @@
 "use client";
 import NavBar from "@/components/NavBar";
-import React, { useEffect } from "react";
+import React from "react";
 import * as motion from "framer-motion/client";
 import { useAnimate } from "framer-motion";
 
@@ -29,6 +29,8 @@ function Hero() {
                   stiffness: 500,
                 }}
                 onAnimationComplete={(definition) => {
+                  console.log(definition);
+
                   animate(scope.current, { opacity: 1, x: 0 });
                 }}
                 className=" font-brittany text-9xl"
