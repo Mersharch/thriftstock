@@ -2,7 +2,7 @@ import React from "react";
 import { FloatingNav } from "@/components/ui/floating-navbar";
 import Link from "next/link";
 import { ROUTES } from "@/lib/route";
-import { ThemeToggle } from "./ThemeToggle";
+// import { ThemeToggle } from "./ThemeToggle";
 import { Home, MessageCircleDashed, User2 } from "lucide-react";
 import * as motion from "framer-motion/client";
 
@@ -42,7 +42,7 @@ function NavBar() {
           }}
         >
           <Link href={ROUTES.home}>
-            <h1 className="p-2 hover:scale-110 transition-all ease-in-out cursor-pointer dark:text-black text-white rounded max-w-fit bg-none dark:bg-white font-bold text-2xl">
+            <h1 className="p-2 hover:scale-110 transition-all ease-in-out cursor-pointer dark:text-black text-white rounded max-w-fit bg-none dark:bg-white text-2xl font-crimsonBold">
               Event Studios
             </h1>
           </Link>
@@ -52,7 +52,7 @@ function NavBar() {
         <FloatingNav navItems={navItems} />
 
         {/* MODE TOGGLE */}
-        <ThemeToggle />
+        {/* <ThemeToggle /> */}
       </main>
     </nav>
   );
