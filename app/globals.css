@@ -25,7 +25,7 @@
     --ring: 239 94% 40%;
     --radius: 0.5rem;
   }
- 
+
   .dark {
     --background: 240 23% 5%;
     --foreground: 176 53% 94%;
@@ -54,6 +54,6 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground scroll-smooth;
   }
 }

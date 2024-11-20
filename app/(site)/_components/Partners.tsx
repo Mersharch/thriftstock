@@ -11,6 +11,7 @@ const Partners = () => {
           width={100}
           height={100}
           priority
+          className="hidden md:block"
         />
         <p className="text-center w-full max-w-[400px] text-slate-400 text-lg">
           <span className="text-black">Event Studios</span> is a top photography
@@ -24,6 +25,7 @@ const Partners = () => {
           width={100}
           height={100}
           priority
+          className="hidden md:block"
         />
       </section>
     </main>

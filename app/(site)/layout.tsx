@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "../globals.css";
-import { ThemeProvider } from "@/components/theme-provider";
 import Footer from "@/components/Footer";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const brittanySignature = localFont({
   src: "../fonts/BrittanySignature.ttf",
@@ -75,15 +75,9 @@ export default function RootLayout({
           ${ralewayExtraBold.variable} 
           antialiased flex-1 overflow-x-hidden bg-background scroll-smooth font-raleway`}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="light"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-          <Footer />
-        </ThemeProvider>
+        <ScrollToTop />
+        {children}
+        <Footer />
       </body>
     </html>
   );
