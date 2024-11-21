@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 import React, { useState } from "react";
 import Link from "next/link";
@@ -9,24 +10,39 @@ import { usePathname } from "next/navigation";
 function NavBar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
+  console.log(pathname);
 
   const navItems = [
     {
       name: "Home",
       link: "/",
-      icon: <Home className="h-4 w-4 text-neutral-500 dark:text-white" />,
     },
     {
       name: "About",
       link: "/about",
-      icon: <User2 className="h-4 w-4 text-neutral-500 dark:text-white" />,
+    },
+    {
+      name: "Gallery",
+      link: "/gallery",
     },
     {
       name: "Contact",
       link: "/contact",
-      icon: (
-        <MessageCircleDashed className="h-4 w-4 text-neutral-500 dark:text-white" />
-      ),
+    },
+  ];
+
+  const socials = [
+    {
+      name: "Instagram",
+      link: "",
+    },
+    {
+      name: "X",
+      link: "",
+    },
+    {
+      name: "Facebook",
+      link: "",
     },
   ];
 
@@ -46,24 +62,28 @@ function NavBar() {
           }}
         >
           <Link href={ROUTES.home}>
-            <h1 className="p-2 hover:scale-110 transition-all ease-in-out cursor-pointer dark:text-black text-white rounded max-w-fit bg-none dark:bg-white text-2xl font-crimsonBold">
+            <h1 className="p-2 hover:scale-110 transition-all ease-in-out cursor-pointer  text-white rounded max-w-fit bg-none  text-2xl font-crimsonBold">
               Event Studios
             </h1>
           </Link>
         </motion.div>
 
         {/* Regular menu */}
-        <div className="hidden md:flex flex-row items-center">
-          {navItems.map((item) => (
-            <Link
-              key={item.name}
-              href={item.link}
-              className={`text-neutral-500 dark:text-white text-sm font-semibold mx-4 ${item.name === pathname ? "text-white dark:text-black" : ""}`}
-            >
-              {item.name}
-            </Link>
-          ))}
+        <div className="hidden md:flex flex-row items-center rounded-full bg-secondary/70 px-2 py-3">
+          <div className="flex items-center">
+            {navItems.map((item) => (
+              <Link
+                key={item.name}
+                href={item.link}
+                className={`text-white-500  text-sm font-semibold mx-4 ${item.link.toLocaleLowerCase() === pathname ? "text-white " : ""}`}
+              >
+                {item.name}
+              </Link>
+            ))}
+          </div>
+          <div></div>
         </div>
+        <div />
 
         {/* MOBILE MENU */}
         <div className="md:hidden">
