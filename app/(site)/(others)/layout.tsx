@@ -7,7 +7,10 @@ const OthersLayout = ({
   children: React.ReactNode;
 }>) => {
   return (
-    <div>
+    <div
+      className="flex-1 space-y-20
+    "
+    >
       <NavBar />
       {children}
     </div>
