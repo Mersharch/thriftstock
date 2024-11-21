@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { ROUTES } from "@/lib/route";
-import { Home, MessageCircleDashed, User2 } from "lucide-react";
+import { Home, Menu, MessageCircleDashed, User2 } from "lucide-react";
 import * as motion from "framer-motion/client";
 import { usePathname } from "next/navigation";
 
@@ -93,7 +93,13 @@ function NavBar() {
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="p-2 hover:scale-110 transition-all ease-in-out cursor-pointer dark:text-black text-white rounded max-w-fit bg-none dark:bg-white text-2xl font-crimsonBold"
           >
-            {isMobileMenuOpen ? "Close" : "Menu"}
+            {isMobileMenuOpen ? (
+              ""
+            ) : (
+              <Menu
+                className={`${pathname === "/" ? "text-primary-foreground" : "text-primary"} w-6 h-6`}
+              />
+            )}
           </button>
           {isMobileMenuOpen && (
             <div className="absolute top-0 left-0 w-full h-screen bg-black bg-opacity-50 flex flex-col items-center justify-center">
