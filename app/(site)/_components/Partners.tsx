@@ -14,10 +14,10 @@ const Partners = () => {
           className="hidden md:block"
         />
         <p className="text-center w-full max-w-[400px] text-slate-400 text-lg">
-          <span className="text-black">Event Studios</span> is a top photography
-          company that captures unforgettable moments,{" "}
-          <span className="text-black">provides stunning images</span> for
-          weddings, corporate events and family gatherings.
+          <span className="text-black font-bold">Event Studios</span> is a top
+          photography company that captures unforgettable moments,{" "}
+          <span className="text-black font-bold">provides stunning images</span>{" "}
+          for weddings, corporate events and family gatherings.
         </p>
         <Image
           src={"/svgs/arrows-right.svg"}
