@@ -30,10 +30,10 @@ function NavBar() {
       name: "About",
       link: "/about",
     },
-    {
-      name: "Gallery",
-      link: "/gallery",
-    },
+    // {
+    //   name: "Gallery",
+    //   link: "/gallery",
+    // },
     // {
     //   name: "Contact",
     //   link: "/contact",
