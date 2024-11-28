@@ -8,7 +8,7 @@ const OthersLayout = ({
 }>) => {
   return (
     <div
-      className="flex-1 space-y-20 z-20 overflow-x-hidden
+      className="flex-1 space-y-20  overflow-x-hidden
     "
     >
       <NavBar />

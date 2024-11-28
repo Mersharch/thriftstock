@@ -2967,6 +2967,33 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@sanity/cli@npm:latest":
+  version: 3.65.0
+  resolution: "@sanity/cli@npm:3.65.0"
+  dependencies:
+    "@babel/traverse": ^7.23.5
+    "@sanity/client": ^6.22.5
+    "@sanity/codegen": 3.65.0
+    "@sanity/telemetry": ^0.7.7
+    "@sanity/util": 3.65.0
+    chalk: ^4.1.2
+    debug: ^4.3.4
+    decompress: ^4.2.0
+    esbuild: 0.21.5
+    esbuild-register: ^3.5.0
+    get-it: ^8.6.5
+    groq-js: ^1.14.0
+    pkg-dir: ^5.0.0
+    prettier: ^3.3.0
+    semver: ^7.3.5
+    silver-fleece: 1.1.0
+    validate-npm-package-name: ^3.0.0
+  bin:
+    sanity: ./bin/sanity
+  checksum: 522df2ed3b831ca81d51443b58efc071f407ac441c5bfa960059ae9c2fc4d7483c3c2852006f29656f860f509dc4fea89bea85a60bfcf6a052f3d003b351d737
+  languageName: node
+  linkType: hard
+
 "@sanity/client@npm:^6.15.11, @sanity/client@npm:^6.15.20, @sanity/client@npm:^6.21.1, @sanity/client@npm:^6.22.1, @sanity/client@npm:^6.22.2":
   version: 6.22.2
   resolution: "@sanity/client@npm:6.22.2"
@@ -2975,6 +3002,17 @@ __metadata:
     get-it: ^8.6.5
     rxjs: ^7.0.0
   checksum: c2b293b82f307baa8d832a565518dce42835a68d88d721f50220cba71dc3d322ebfae0b48cc917780c696c446075a9d2a7be7fda8e2ffc5863babc0c84378990
+  languageName: node
+  linkType: hard
+
+"@sanity/client@npm:^6.22.5":
+  version: 6.22.5
+  resolution: "@sanity/client@npm:6.22.5"
+  dependencies:
+    "@sanity/eventsource": ^5.0.2
+    get-it: ^8.6.5
+    rxjs: ^7.0.0
+  checksum: 84e9baf5c993099eff0ccb962f23a8923dca5364802a6b0d51749c96a028342cf8fa4095d96dce8131b2e286f19fd0dc440731306bba6b7c8a2de5c38435e107
   languageName: node
   linkType: hard
 
@@ -2998,6 +3036,29 @@ __metadata:
     tsconfig-paths: ^4.2.0
     zod: ^3.22.4
   checksum: 50949bb5651743589004f15f620064c917fb8cdc8c0476fb2e7465f0397f97f38ca871bed7e7e7f18873fe7f0dd8b5ff6e6439dca0ec630291f8a870876fe666
+  languageName: node
+  linkType: hard
+
+"@sanity/codegen@npm:3.65.0":
+  version: 3.65.0
+  resolution: "@sanity/codegen@npm:3.65.0"
+  dependencies:
+    "@babel/core": ^7.23.9
+    "@babel/generator": ^7.23.6
+    "@babel/preset-env": ^7.23.8
+    "@babel/preset-react": ^7.23.3
+    "@babel/preset-typescript": ^7.23.3
+    "@babel/register": ^7.23.7
+    "@babel/traverse": ^7.23.5
+    "@babel/types": ^7.23.9
+    debug: ^4.3.4
+    globby: ^10.0.0
+    groq: 3.65.0
+    groq-js: ^1.14.0
+    json5: ^2.2.3
+    tsconfig-paths: ^4.2.0
+    zod: ^3.22.4
+  checksum: 85f3264b6dae4d9c457d903809050bb469fc0ca73826be45e6818afe2ec06f4fcc95287b87967544b89b4344b64980c4ef6daa84d18de70f251f2647a3464a07
   languageName: node
   linkType: hard
 
@@ -3340,6 +3401,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@sanity/types@npm:3.65.0":
+  version: 3.65.0
+  resolution: "@sanity/types@npm:3.65.0"
+  dependencies:
+    "@sanity/client": ^6.22.5
+    "@types/react": ^18.3.5
+  checksum: f8e96d3500a63b0641fb2bee28eea8fe8a08706f22ba66a141033dee9242a923e7668602863e45a3f27b5cc11020d9b139de14907ec0da09ef1d2561e0f94a55
+  languageName: node
+  linkType: hard
+
 "@sanity/ui@npm:^2.8.10":
   version: 2.8.18
   resolution: "@sanity/ui@npm:2.8.18"
@@ -3384,6 +3455,19 @@ __metadata:
     moment: ^2.30.1
     rxjs: ^7.8.1
   checksum: 2f4dfd16dd78ddea48abc132efe5a8b4572fec9afb3262e5e3fbf189d3fac1335f7871244ed0ddcbfef8411be42be308ea313d18f597ba2a9e22c5c80cff49ab
+  languageName: node
+  linkType: hard
+
+"@sanity/util@npm:3.65.0":
+  version: 3.65.0
+  resolution: "@sanity/util@npm:3.65.0"
+  dependencies:
+    "@sanity/client": ^6.22.5
+    "@sanity/types": 3.65.0
+    get-random-values-esm: 1.0.2
+    moment: ^2.30.1
+    rxjs: ^7.8.1
+  checksum: 95f7f1349132e34fa3ceaa4005e1c2c5200116e574193c9c77e33f5bd79fca1728c5e41385064e8e6cefa4b4a79f53ee2ee301535008369e02dcd82c8f5e33ac
   languageName: node
   linkType: hard
 
@@ -6390,6 +6474,7 @@ __metadata:
   dependencies:
     "@radix-ui/react-dropdown-menu": ^2.1.2
     "@radix-ui/react-slot": ^1.1.0
+    "@sanity/cli": latest
     "@sanity/icons": ^3.4.0
     "@sanity/image-url": 1.1.0
     "@sanity/vision": 3.62.3
@@ -7099,10 +7184,26 @@ __metadata:
   languageName: node
   linkType: hard
 
+"groq-js@npm:^1.14.0":
+  version: 1.14.0
+  resolution: "groq-js@npm:1.14.0"
+  dependencies:
+    debug: ^4.3.4
+  checksum: 99b290a4c1ecec0b3e1910b4ff10d1fea8f97f748415de8778e26de340d6bc133b770322023bdaea4acc058c497a9c10250995ea84c6949678afce2ca095b9b7
+  languageName: node
+  linkType: hard
+
 "groq@npm:3.62.3, groq@npm:^3.62.2":
   version: 3.62.3
   resolution: "groq@npm:3.62.3"
   checksum: 9b8075b9206364d86a750b8260eb23bbb3adc1ebb8f23eab1626d228eff3671e281ebc2fbca2fb3b20c54a6a2155a95d3897f07e788f23c61a4f4958c2466e83
+  languageName: node
+  linkType: hard
+
+"groq@npm:3.65.0":
+  version: 3.65.0
+  resolution: "groq@npm:3.65.0"
+  checksum: 3c4b473a4365a921286a9691d6dc82f242f71e18373b096094f064869085807eb2e9f5165654024cd39a7aa5d5a936abac7838de495a60d1aee72e6e2ea7654f
   languageName: node
   linkType: hard
 
