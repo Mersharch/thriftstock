@@ -2,6 +2,9 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 const Gallery = () => {
   const [selectedCategory, setSelectedCategory] = useState("weddings");
@@ -66,7 +69,7 @@ const Gallery = () => {
                     selectedCategory === category.slug ? "#fff" : "#2A7168",
                   transition: { duration: 0.3 },
                 }}
-                className="md:font-bold text-xs md:text-sm lg:text-base my-1 md:my-2"
+                className="md:font-bold text-xs md:text-sm lg:text-base my-2 lg:my-3"
               >
                 {category.name}
               </motion.h4>
@@ -79,7 +82,7 @@ const Gallery = () => {
           variants={gridVariants}
           initial="hidden"
           animate="visible"
-          className="flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
+          className="flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 overflow-hidden"
         >
           {Array.from({ length: 9 }, (_, index) => (
             <motion.div
@@ -87,8 +90,32 @@ const Gallery = () => {
               variants={itemVariants}
               whileHover={{ scale: 1.03 }}
               transition={{ ease: "easeOut" }}
-              className="aspect-square bg-slate-500 w-full max-h-96 shadow-md"
-            />
+              className="aspect-square bg-slate-500 w-full max-h-96 shadow-md relative group"
+            >
+              <Image
+                src="/images/work.png"
+                alt="lorem"
+                className="w-full h-full object-cover object-center rounded-lg"
+                priority
+                fill
+              />
+              <div
+                className="absolute inset-0 w-full h-full bg-black opacity-0 group-hover:opacity-65 
+                             flex flex-col justify-center items-center 
+                             space-y-2 sm:space-y-3 
+                             transition-opacity duration-300 ease-in-out"
+              >
+                <h3 className="text-xl lg:text-2xl xl:text-4xl text-white text-center px-2">
+                  Jeremy&apos;s wedding
+                </h3>
+                <Button
+                  asChild
+                  className="text-xs sm:text-sm md:text-base px-2 sm:px-3 md:px-4"
+                >
+                  <Link href="/gallery/a">view gallery</Link>
+                </Button>
+              </div>
+            </motion.div>
           ))}
         </motion.div>
       </div>
