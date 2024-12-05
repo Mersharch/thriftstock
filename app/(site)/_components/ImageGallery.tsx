@@ -1,8 +1,9 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 
 import { ALL_CATEGORIESResult, ALL_SHOOTSResult } from "@/sanity.types";
 import { motion } from "framer-motion";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -13,12 +14,29 @@ interface Props {
   shoots: ALL_SHOOTSResult;
 }
 
-// SETTING UP SANITY IMAGE URL BUILDER
-
 const ImageGallery = ({ categories, shoots }: Props) => {
   const [selectedCategory, setSelectedCategory] = useState<string | undefined>(
     categories[0]?.slug?.current
   );
+  const [filteredShoots, setFilteredShoots] = useState<ALL_SHOOTSResult>([]);
+
+  // Add useEffect to filter shoots on initial load
+  useEffect(() => {
+    if (selectedCategory) {
+      handleFilter(selectedCategory);
+    }
+  }, [selectedCategory]);
+
+  const handleClick = (category: string | undefined) => {
+    setSelectedCategory(category);
+  };
+
+  const handleFilter = (category: string | undefined) => {
+    const filtered = shoots.filter(
+      (shoot) => shoot.category?.slug?.current === category
+    );
+    setFilteredShoots(filtered);
+  };
 
   const gridVariants = {
     hidden: { opacity: 0 },
@@ -50,7 +68,7 @@ const ImageGallery = ({ categories, shoots }: Props) => {
         {categories.map((category, index) => (
           <motion.div
             key={index}
-            onClick={() => setSelectedCategory(category.slug?.current)}
+            onClick={() => handleClick(category.slug?.current)}
             className={`w-40 flex justify-center items-center cursor-pointer relative rounded-full`}
             initial={{ opacity: 1 }}
             whileHover={{ scale: 0.9 }}
@@ -86,7 +104,7 @@ const ImageGallery = ({ categories, shoots }: Props) => {
         animate="visible"
         className="flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 overflow-hidden"
       >
-        {shoots.map((shoot, index) => {
+        {filteredShoots.map((shoot, index) => {
           const thumbnail = shoot.mainImage?.asset?._ref
             ? urlFor(shoot.mainImage.asset._ref).url()
             : undefined;
