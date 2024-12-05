@@ -14,7 +14,11 @@ export const getShoots = async () => {
               }
             },
             isFeatured,
-              category,
+              category->{
+                slug{
+                current
+                }
+              },
             slug{
                 current
             }

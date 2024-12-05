@@ -221,7 +221,7 @@ export type ALL_CATEGORIESResult = Array<{
 
 // Source: ./sanity/services/getShoots.ts
 // Variable: ALL_SHOOTS
-// Query: *[            _type == "gallery"        ]        | order(name asc){            name,            mainImage{              asset{                _ref              }            },            isFeatured,              category,            slug{                current            }        }
+// Query: *[            _type == "gallery"        ]        | order(name asc){            name,            mainImage{              asset{                _ref              }            },            isFeatured,              category->{                slug{                current                }              },            slug{                current            }        }
 export type ALL_SHOOTSResult = Array<{
   name: string | null;
   mainImage: {
@@ -231,21 +231,38 @@ export type ALL_SHOOTSResult = Array<{
   } | null;
   isFeatured: boolean | null;
   category: {
-    _ref: string;
-    _type: "reference";
-    _weak?: boolean;
-    [internalGroqTypeReferenceTo]?: "category";
+    slug: {
+      current: string | null;
+    } | null;
   } | null;
   slug: {
     current: string | null;
   } | null;
 }>;
 
+// Source: ./sanity/services/getSingleShoot.ts
+// Variable: SINGLE_SHOOT
+// Query: *[_type == "gallery" && slug.current == $slug][0]{  name,  mainImage{    asset{      _ref    }  },  additionalImages[]{    asset{      _ref    }  }}
+export type SINGLE_SHOOTResult = {
+  name: string | null;
+  mainImage: {
+    asset: {
+      _ref: string;
+    } | null;
+  } | null;
+  additionalImages: Array<{
+    asset: {
+      _ref: string;
+    } | null;
+  }> | null;
+} | null;
+
 // Query TypeMap
 import "@sanity/client";
 declare module "@sanity/client" {
   interface SanityQueries {
     "\n        *[\n            _type == \"category\"\n        ]\n        | order(title asc)\n        ": ALL_CATEGORIESResult;
-    "\n       *[\n            _type == \"gallery\"\n        ]\n        | order(name asc){\n            name,\n            mainImage{\n              asset{\n                _ref\n              }\n            },\n            isFeatured,\n              category,\n            slug{\n                current\n            }\n        }\n        ": ALL_SHOOTSResult;
+    "\n       *[\n            _type == \"gallery\"\n        ]\n        | order(name asc){\n            name,\n            mainImage{\n              asset{\n                _ref\n              }\n            },\n            isFeatured,\n              category->{\n                slug{\n                current\n                }\n              },\n            slug{\n                current\n            }\n        }\n        ": ALL_SHOOTSResult;
+    "\n      *[_type == \"gallery\" && slug.current == $slug][0]{\n  name,\n  mainImage{\n    asset{\n      _ref\n    }\n  },\n  additionalImages[]{\n    asset{\n      _ref\n    }\n  }\n}\n        ": SINGLE_SHOOTResult;
   }
 }
