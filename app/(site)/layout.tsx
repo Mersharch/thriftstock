@@ -10,6 +10,11 @@ const brittanySignature = localFont({
   variable: "--font-brittany-signature",
   weight: "100 900",
 });
+const centuryGothic = localFont({
+  src: "../fonts/centurygothic.ttf",
+  variable: "--font-century-gothic",
+  weight: "400",
+});
 const crimsonText = localFont({
   src: "../fonts/CrimsonText-Bold.ttf",
   variable: "--font-crimson-text",
@@ -66,6 +71,7 @@ export default function RootLayout({
       <body
         className={`
           ${brittanySignature.variable} 
+          ${centuryGothic.variable} 
           ${crimsonText.variable} 
           ${ralewayExtraLight.variable} 
           ${ralewayLight.variable} 

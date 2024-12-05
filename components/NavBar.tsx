@@ -75,16 +75,16 @@ function NavBar() {
         >
           <Link href={ROUTES.home}>
             <h1
-              className={`p-2 hover:scale-110 transition-all ease-in-out cursor-pointer  ${pathname === "/" ? "text-white" : "text-primary"} rounded max-w-fit bg-none  text-2xl font-crimsonBold`}
+              className={`p-2 hover:scale-110 transition-all ease-in-out cursor-pointer  ${pathname === "/" ? "text-white" : "text-primary"} rounded max-w-fit bg-none  text-2xl font-century`}
             >
-              Event Studios
+              EVENT STUDIOS
             </h1>
           </Link>
         </motion.div>
 
         {/* REGULAR MENU */}
-        <div className="hidden lg:flex flex-row items-center rounded-full lg:bg-secondary/70 px-10 py-3 space-x-20">
-          <div className="flex items-center space-x-5">
+        <div className="hidden lg:flex flex-row items-center rounded-full lg:bg-secondary/70 px-10 py-3 space-x-40">
+          <div className="flex items-center space-x-10">
             {navItems.map((item) => (
               <Link
                 key={item.name}

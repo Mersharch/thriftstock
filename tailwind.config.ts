@@ -20,6 +20,7 @@ const config = {
     extend: {
       fontFamily: {
         brittany: "var(--font-brittany-signature)",
+        century: "var(--font-century-gothic)",
         crimsonBold: "var(--font-crimson-text)",
         raleway: [
           "var(--font-rale-extra-light)",
