@@ -68,6 +68,46 @@ export type Geopoint = {
   alt?: number;
 };
 
+export type Gallery = {
+  _id: string;
+  _type: "gallery";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  name?: string;
+  mainImage?: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  };
+  additionalImages?: Array<{
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+    _key: string;
+  }>;
+  category?: {
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    [internalGroqTypeReferenceTo]?: "category";
+  };
+  isFeatured?: boolean;
+  slug?: Slug;
+};
+
 export type Category = {
   _id: string;
   _type: "category";
@@ -163,5 +203,49 @@ export type Slug = {
   source?: string;
 };
 
-export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityFileAsset | Geopoint | Category | Client | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | Slug;
+export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityFileAsset | Geopoint | Gallery | Category | Client | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | Slug;
 export declare const internalGroqTypeReferenceTo: unique symbol;
+// Source: ./sanity/services/getCategories.ts
+// Variable: ALL_CATEGORIES
+// Query: *[            _type == "category"        ]        | order(title asc)
+export type ALL_CATEGORIESResult = Array<{
+  _id: string;
+  _type: "category";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  title?: string;
+  slug?: Slug;
+  description?: string;
+}>;
+
+// Source: ./sanity/services/getShoots.ts
+// Variable: ALL_SHOOTS
+// Query: *[            _type == "gallery"        ]        | order(name asc){            name,            mainImage{              asset{                _ref              }            },            isFeatured,              category,            slug{                current            }        }
+export type ALL_SHOOTSResult = Array<{
+  name: string | null;
+  mainImage: {
+    asset: {
+      _ref: string;
+    } | null;
+  } | null;
+  isFeatured: boolean | null;
+  category: {
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    [internalGroqTypeReferenceTo]?: "category";
+  } | null;
+  slug: {
+    current: string | null;
+  } | null;
+}>;
+
+// Query TypeMap
+import "@sanity/client";
+declare module "@sanity/client" {
+  interface SanityQueries {
+    "\n        *[\n            _type == \"category\"\n        ]\n        | order(title asc)\n        ": ALL_CATEGORIESResult;
+    "\n       *[\n            _type == \"gallery\"\n        ]\n        | order(name asc){\n            name,\n            mainImage{\n              asset{\n                _ref\n              }\n            },\n            isFeatured,\n              category,\n            slug{\n                current\n            }\n        }\n        ": ALL_SHOOTSResult;
+  }
+}

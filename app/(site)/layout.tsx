@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "../globals.css";
 import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
+import { SanityLive } from "@/sanity/lib/live";
 
 const brittanySignature = localFont({
   src: "../fonts/BrittanySignature.ttf",
@@ -78,6 +79,7 @@ export default function RootLayout({
         <ScrollToTop />
         {children}
         <Footer />
+        <SanityLive />
       </body>
     </html>
   );
