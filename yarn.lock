@@ -6500,41 +6500,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eventstudios@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "eventstudios@workspace:."
-  dependencies:
-    "@radix-ui/react-dialog": ^1.1.2
-    "@radix-ui/react-dropdown-menu": ^2.1.2
-    "@radix-ui/react-slot": ^1.1.0
-    "@sanity/cli": latest
-    "@sanity/icons": ^3.4.0
-    "@sanity/image-url": 1.1.0
-    "@sanity/vision": 3.62.3
-    "@types/node": ^20
-    "@types/react": ^18
-    "@types/react-dom": ^18
-    class-variance-authority: ^0.7.0
-    clsx: ^2.1.1
-    eslint: ^8
-    eslint-config-next: 15.0.2
-    framer-motion: ^11.11.11
-    lucide-react: ^0.454.0
-    next: 15.0.2
-    next-sanity: 9.8.8
-    next-themes: ^0.4.1
-    postcss: ^8
-    react: 19.0.0-rc-02c0e824-20241028
-    react-dom: 19.0.0-rc-02c0e824-20241028
-    sanity: 3.62.3
-    styled-components: 6.1.13
-    tailwind-merge: ^2.5.4
-    tailwindcss: ^3.4.1
-    tailwindcss-animate: ^1.0.7
-    typescript: ^5
-  languageName: unknown
-  linkType: soft
-
 "execa@npm:^2.0.0":
   version: 2.1.0
   resolution: "execa@npm:2.1.0"
@@ -8230,6 +8195,13 @@ __metadata:
     object.assign: ^4.1.4
     object.values: ^1.1.6
   checksum: f4b05fa4d7b5234230c905cfa88d36dc8a58a6666975a3891429b1a8cdc8a140bca76c297225cb7a499fad25a2c052ac93934449a2c31a44fc9edd06c773780a
+  languageName: node
+  linkType: hard
+
+"keen-slider@npm:^6.8.6":
+  version: 6.8.6
+  resolution: "keen-slider@npm:6.8.6"
+  checksum: f87e65d72e3b2e73cbd52b1908c1458b253ec5a2a2d3e1e34bd1a831172d18568649188cf3e4ad679c7988568929195ae91d4b7a1c0bd3d6da592a453be3723a
   languageName: node
   linkType: hard
 
@@ -11606,6 +11578,42 @@ __metadata:
   checksum: 84e1b804bfec49f3531215f17b4a6e50fd4397b5f7c1bccc427b9c656e1ecfb13ea79d899930184f78bc2f57285c54d9a50a590c8868f4f0cef5c1d9f898b05e
   languageName: node
   linkType: hard
+
+"thriftstock@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "thriftstock@workspace:."
+  dependencies:
+    "@radix-ui/react-dialog": ^1.1.2
+    "@radix-ui/react-dropdown-menu": ^2.1.2
+    "@radix-ui/react-slot": ^1.1.0
+    "@sanity/cli": latest
+    "@sanity/icons": ^3.4.0
+    "@sanity/image-url": 1.1.0
+    "@sanity/vision": 3.62.3
+    "@types/node": ^20
+    "@types/react": ^18
+    "@types/react-dom": ^18
+    class-variance-authority: ^0.7.0
+    clsx: ^2.1.1
+    eslint: ^8
+    eslint-config-next: 15.0.2
+    framer-motion: ^11.11.11
+    keen-slider: ^6.8.6
+    lucide-react: ^0.454.0
+    next: 15.0.2
+    next-sanity: 9.8.8
+    next-themes: ^0.4.1
+    postcss: ^8
+    react: 19.0.0-rc-02c0e824-20241028
+    react-dom: 19.0.0-rc-02c0e824-20241028
+    sanity: 3.62.3
+    styled-components: 6.1.13
+    tailwind-merge: ^2.5.4
+    tailwindcss: ^3.4.1
+    tailwindcss-animate: ^1.0.7
+    typescript: ^5
+  languageName: unknown
+  linkType: soft
 
 "through2@npm:^2.0.3, through2@npm:~2.0.3":
   version: 2.0.5

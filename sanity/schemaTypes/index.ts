@@ -1,9 +1,9 @@
 import { type SchemaTypeDefinition } from "sanity";
 
-import { clientType } from "./clientsType";
 import { categoryType } from "./categoryType";
-import { galleryType } from "./galleryType";
+import { productType } from "./productType";
+import { orderType } from "./orderType";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [clientType, categoryType, galleryType],
+  types: [categoryType, productType, orderType],
 };

@@ -1,13 +1,12 @@
-import Hero from "./_components/Hero";
-import OurWork from "./_components/OurWork";
-import Partners from "./_components/Partners";
+"use client";
 
-export default function Home() {
+import Carousel from "@/components/Carousel";
+import React from "react";
+
+export default function Page() {
   return (
-    <main className=" flex-1 w-full flex flex-col min-h-screen space-y-20 ">
-      <Hero />
-      <Partners />
-      <OurWork />
-    </main>
+    <div className="bg-white w-full flex-1 h-screen">
+      <Carousel />
+    </div>
   );
 }

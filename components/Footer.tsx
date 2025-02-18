@@ -21,7 +21,7 @@ function Footer() {
     },
   ];
   return (
-    <footer className="flex flex-col items-center p-4 justify-around py-8 md:py-12 lg:py-20 space-y-6 md:space-y-8 lg:space-y-10">
+    <footer className="flex flex-col items-center p-4 justify-around py-8 md:py-10 space-y-6 md:space-y-8 lg:space-y-10">
       <h3 className="text-primary font-bold text-2xl md:text-3xl lg:text-4xl w-full text-center px-4">
         Connect with us on social media platforms!
       </h3>

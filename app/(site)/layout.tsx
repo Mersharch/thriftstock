@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "../globals.css";
-import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import { SanityLive } from "@/sanity/lib/live";
+import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
 
 const brittanySignature = localFont({
   src: "../fonts/BrittanySignature.ttf",
@@ -57,8 +58,8 @@ const ralewaySemiBold = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Event Studios",
-  description: "Event studios Ghana",
+  title: "The ThriftStock",
+  description: "",
 };
 
 export default function RootLayout({
@@ -82,10 +83,13 @@ export default function RootLayout({
           ${ralewayExtraBold.variable} 
           antialiased flex-1 overflow-x-hidden bg-background scroll-smooth font-raleway`}
       >
+        {/* NAVBAR */}
+        <NavBar />
         <ScrollToTop />
         {children}
-        <Footer />
         <SanityLive />
+        {/* Footer */}
+        <Footer />
       </body>
     </html>
   );
