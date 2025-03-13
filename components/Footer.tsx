@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Phone, Twitter } from "lucide-react";
+import { Facebook, Instagram, Link2, Phone, Twitter } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 
@@ -7,49 +7,64 @@ function Footer() {
     {
       name: "Instagram",
       link: "",
-      icon: <Instagram className="w-6 h-6 text-black" />,
+      icon: <Instagram className="w-4 h-4 sm:w-5 sm:h-5 text-slate-700" />,
     },
     {
       name: "Twitter",
       link: "",
-      icon: <Twitter className="w-6 h-6 text-black" />,
+      icon: <Twitter className="w-4 h-4 sm:w-5 sm:h-5 text-slate-700" />,
     },
     {
       name: "Facebook",
       link: "",
-      icon: <Facebook className="w-6 h-6 text-black" />,
+      icon: <Facebook className="w-4 h-4 sm:w-5 sm:h-5 text-slate-700" />,
     },
   ];
-  return (
-    <footer className="flex flex-col items-center p-4 justify-around py-8 md:py-10 space-y-6 md:space-y-8 lg:space-y-10">
-      <h3 className="text-primary font-bold text-2xl md:text-3xl lg:text-4xl w-full text-center px-4">
-        Connect with us on social media platforms!
-      </h3>
 
-      <div className="w-full flex flex-col md:flex-row items-center space-y-6 md:space-y-0 md:justify-around lg:justify-center lg:space-x-16">
-        <div className="flex flex-row items-center  space-x-6 md:space-x-16">
+  return (
+    <footer className="w-full flex flex-col space-y-3 px-4 sm:px-6 md:px-8 pt-6 sm:pt-8 md:pt-10 pb-4 sm:pb-5 border-t-[0.5px] border-slate-400">
+      <div className="w-full flex flex-col-reverse sm:flex-row items-center space-y-5 sm:space-y-0 sm:justify-between">
+        {/* COPYRIGHT */}
+        <span className="text-slate-700 text-xs sm:text-sm font-bold mt-3 sm:mt-0">
+          &copy;Thriftstock&trade; All rights reserved.
+        </span>
+
+        {/* LINKS */}
+        <div className="flex items-center space-x-4">
+          <Link
+            href={"/customer-care"}
+            className="text-slate-700 text-xs sm:text-sm font-bold hover:text-slate-900 transition-colors"
+          >
+            FAQs
+          </Link>
+          <Link
+            href={"/customer-care/#returns"}
+            className="text-slate-700 text-xs sm:text-sm font-bold hover:text-slate-900 transition-colors"
+          >
+            Return Policy
+          </Link>
+        </div>
+
+        {/* SOCIALS */}
+        <div className="flex flex-row items-center space-x-3 sm:space-x-2">
           {socials.map((social, index) => (
             <Link
               target="_blank"
               href={social.link}
               key={index}
-              className="flex items-center space-x-3 hover:opacity-80 transition-opacity"
+              className="flex items-center hover:scale-110 transition-transform"
             >
               {social.icon}
-              <h3 className="text-lg md:text-xl lg:text-2xl text-slate-500 font-bold hidden lg:flex">
-                {social.name}
-              </h3>
             </Link>
           ))}
         </div>
-
-        <div className="flex items-center space-x-3 ">
-          <Phone className="w-6 h-6 text-black" />
-          <h3 className="text-lg md:text-xl lg:text-2xl text-slate-500 font-bold">
-            +233 32 456 5677
-          </h3>
-        </div>
       </div>
+
+      {/* <Link href={""} target="_blank" className=" flex space-x-2">
+        <span className="text-slate-600 text-sm">Built by Mershack</span>
+
+        <Link2 className="w-5 h-5 text-slate-300" />
+      </Link> */}
     </footer>
   );
 }
