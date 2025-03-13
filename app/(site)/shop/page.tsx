@@ -1,6 +1,6 @@
 "use client";
 import ProductGrid from "@/components/ProductGrid";
-import ProductGridSkeleton from "@/components/ProductGridSkeleton";
+// import ProductGridSkeleton from "@/components/ProductGridSkeleton";
 import SortAndFilter from "@/components/SortAndFilter";
 import React, { useState, useMemo } from "react";
 

@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Link2, Phone, Twitter } from "lucide-react";
+import { Facebook, Instagram, Twitter } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 
